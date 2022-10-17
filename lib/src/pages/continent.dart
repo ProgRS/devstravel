@@ -18,12 +18,14 @@ class ContinentPage extends StatelessWidget{
       fontFamily: 'Helvetica Neue'
   );
 
-  void seeCityAction(continentIndex){
-    print(continentIndex);
+  void seeCityAction(context,  continentIndex){
+    //print(continentIndex);
+    Navigator.pushNamed(context, '/listcity', arguments: continentIndex);
   }
 
-  void cityBoxAction (cityData){
-      print(cityData['name']);
+  void cityBoxAction(pageContex, cityData){
+
+      Navigator.pushNamed(pageContex, '/city', arguments: cityData);
 
   }
 
@@ -38,8 +40,6 @@ class ContinentPage extends StatelessWidget{
               scaffoldKey: _scaffoldkey,
               title: 'Escolha um continente',
               pageContext: context,
-
-
             ),
           ),
           drawer: CustomDrawer(
@@ -82,15 +82,13 @@ class ContinentPage extends StatelessWidget{
                                   ),
                                   ),
                                   onPressed: (){
-                                    seeCityAction(index);
+                                    cityBoxAction(context, index);
                                   },
                               )
-
-
                         ],
                         ),
                     Container(
-                      height: 130,
+                      height: 150,
                       margin: EdgeInsets.only(bottom: 15),
                       child: ListView.builder(
 
@@ -99,7 +97,9 @@ class ContinentPage extends StatelessWidget{
                         itemBuilder: (cityContext, cityIndex){
                               return CityBox(
                                 data: cities[cityIndex],
-                                onTap: cityBoxAction
+                                onTap: (cityData){
+                                    cityBoxAction(context, cityData);
+                                }
                               );
 
                         },

@@ -1,3 +1,4 @@
+import 'package:devstravel/src/pages/city.dart';
 import 'package:devstravel/src/pages/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +8,7 @@ import 'src/pages/preload.dart';
 
 import 'src/pages/home.dart';
 import 'src/pages/continent.dart';
+import 'src/pages/listcity.dart';
 
 void main() => runApp(
       MultiProvider(
@@ -28,7 +30,9 @@ class MyApp extends StatelessWidget{
               '/preload': (Context) => PreloadPage(),
               '/home' : (context) => HomePage(),
               '/search': (context) => SearchPage(),
-              '/continent': (context) => ContinentPage()
+              '/continent': (context) => ContinentPage(),
+              '/listcity': (context) => ListCityPage(),
+              '/city': (context) => CityPage()
             },
             initialRoute: '/preload',
        );
