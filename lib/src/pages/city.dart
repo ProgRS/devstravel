@@ -60,18 +60,54 @@ class CityPage extends StatelessWidget{
                          ),
                        child: Column(
                                 children: < Widget >[
-                                  Row(children: <Widget>[
-                                        Column(
-                                          children: <Widget>[
-                                            Text(cityData['name'], style: TextStyle(
-                                                fontFamily: 'Helvetica Neue',
-                                                fontSize: 19,
-                                                fontWeight: FontWeight.bold
-                                            ),),
-                                            Text('Estrelinhas')
-                                          ],
-                                        ),
-                                    Text('...')
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                    Container(
+                                      margin: EdgeInsets.all(15),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Container(
+                                             margin: EdgeInsets.only(bottom: 5),
+                                             child: Text(cityData['name'], style: TextStyle(
+                                                 fontFamily: 'Helvetica Neue',
+                                                 fontSize: 19,
+                                                 fontWeight: FontWeight.bold
+                                             ),),
+
+                                          ),
+
+                                          Row(
+                                            children: <Widget>[
+                                              Icon(Icons.star, color: Colors.blue, size: 16,),
+                                              Icon(Icons.star, color: Colors.blue, size: 16),
+                                              Icon(Icons.star, color: Colors.blue, size: 16),
+                                              Icon(Icons.star, color: Colors.blue, size: 16),
+                                              Icon(Icons.star, color: Colors.grey, size: 16),
+                                              
+                                              Container(
+                                                margin: EdgeInsets.only(left: 5),
+                                                child: Text('4.2', style: TextStyle(
+                                                      fontFamily: 'Helvetica Neue',
+                                                      fontSize: 11,
+                                                       fontWeight: FontWeight.bold,
+                                                       color: Colors.blue
+                                                ),),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.all(10),
+                                      child: IconButton(
+                                        icon: Icon(Icons.favorite_border , color: Colors.red,),
+                                        onPressed: (){},
+
+                                      ),
+                                    )
                                   ],)
                                 ],
                        ),
